@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "email": "test001@gmail.com",
+      "hash": "$2a$10$fDybaktx4t2vcB/QY8dxwOhi7JJzGhd.vn4Dvmry8Vw0PhdtmOetK",
+      "id": "e1e392ee-61b9-4ba2-b211-667a4300b0dc"
+    },
+    {
+      "user": "testuser@test.com",
+      "hash": "$2a$10$SQ/8zkjnlmamUHl3Mz8oD.ZEpfTc1UZSAES7Yl9fSOJ78ZEB52hXK",
+      "id": "347fc8f3-1e8c-4aad-93a0-ceb82f18c477"
+    },
+    {
+      "email": "testuser@test.com",
+      "hash": "$2a$10$FTfL4C2RMl5UdnwQKkgm/ugrhOciBpCokAGzzieMZ2cMs3TN7w1va",
+      "id": "05d57373-4359-439c-a236-55aa5771333c"
+    },
+    {
+      "email": "testuser1@gmail.com",
+      "hash": "$2a$10$eTS1MO3ecPbw8Co931RDc.msHGaLj8R9cQ1lm0itePKQydvqf9lCq",
+      "id": "dd933648-563d-4d4f-8e39-afbc21456a0e"
+    },
+    {
+      "email": "test_user@gmail.com",
+      "hash": "$2a$10$qH1iAr6F78Ja/cfQryxnYOLM3iOVwIYFZ/M6caML9eaAIrMCuxqxm",
+      "id": "34adb15f-48a3-4203-93e2-3385c5fe5007"
+    },
+    {
+      "email": "test_user_account@gmail.com",
+      "hash": "$2a$10$FhJacmR5R3A0GllI0.njO.HLXI7suqPg9S4JVDTNqibR6h5su8m4.",
+      "id": "7e2bd23d-e140-4c2c-b79b-647820b10924"
+    },
+    {
+      "email": "another@gmail.com",
+      "hash": "$2a$10$KKXveWzdKlgNFJAIey3GIePTu8JnldqXmt0yG1GbSOcOiLP20X0/G",
+      "id": "61a910fe-ae42-44a2-8592-68db17ce12b4"
+    },
+    {
+      "email": "test_user123@gmail.com",
+      "hash": "$2a$10$Zm0cM/KB8fP2xWZPWPmS1.n3M7hvsrcSMdwZgIcT3cTmeDCZk1Rta",
+      "id": "52b29b88-5fd5-42bf-a4d5-34a229a609da"
+    },
+    {
+      "email": "peg@test.com",
+      "hash": "$2a$10$SuLGqZPUrAAQQVvb7h9UoeWFf9a/Dsase.Jhu4gbXdBHjaZYq.9yi",
+      "id": "38758167-e56a-413f-874b-b32dce22f7bb"
+    },
+    {
+      "email": "tim@test.com",
+      "hash": "$2a$10$QtDRp7jbl8Rt7.OybUBQG.2NSpk4War7Ks5Rq0VISD1VM7T0x5Ufy",
+      "id": "58e62b7e-f8c3-4adf-8839-63a6b498597c"
+    },
+    {
+      "email": "timmy@test.com",
+      "hash": "$2a$10$ofa5Co6WGnmRfa70cqS3We3H9b3yZtVNWCBF1GPhVI7eLfuxLWMMm",
+      "id": "6bf13422-7ce7-4717-9d75-1d8fb3fc5245"
+    },
+    {
+      "email": "bobby@test.com",
+      "hash": "$2a$10$4cJxMil6SK39BVdW7D2RtuKMSZ4HlzAdTAPHgCvBBSyDxOle20e3S",
+      "id": "37de58f1-bbbf-4e8a-b2a8-77b554494fd4",
+      "favorites": [
+        "79874",
+        "78152"
+      ]
+    }
+  ]
+}
