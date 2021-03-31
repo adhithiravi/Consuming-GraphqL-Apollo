@@ -26,10 +26,17 @@ const FEATURED_SPEAKER = gql`
 `;
 
 // define speaker query
-const SPEAKERS = gql`
+export const SPEAKERSQUERY = gql`
 	query speakers {
 		speakers {
-			...SpeakerInfo
+			id
+			name
+			bio
+			sessions {
+				id
+				title
+			}
+      featured
 		}
 	}
   ${SPEAKER_ATTRIBUTES}
@@ -45,14 +52,14 @@ const SPEAKER_BY_ID = gql`
 `;
 
 
-const SpeakerList = () => {
+export const SpeakerList = () => {
 
-  const { loading, error, data } = useQuery(SPEAKERS);
+  const { loading, error, data } = useQuery(SPEAKERSQUERY);
 
   const [ markFeatured ] = useMutation(FEATURED_SPEAKER);
   
-	if (loading) return <p>Loading speakers...</p>
-	if (error) return <p>Error loading speakers!</p>
+	if (loading) return <p id="loading">Loading speakers...</p>
+	if (error) return <p className="error">Error loading speakers!</p>
 
   return data.speakers.map(({ id, name, bio, sessions, featured }) => (
 		<div
@@ -72,7 +79,7 @@ const SpeakerList = () => {
 					{
 						sessions.map((session) => (
 							<span key={session.id}>
-              	<p>{session.title}</p>
+              	<p className="session-title">{session.title}</p>
            		</span>
 						))
 					}

@@ -3,18 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@apollo/client": "^3.0.1",
+    "@apollo/client": "3.3.13",
     "@testing-library/jest-dom": "5.11.0",
     "@testing-library/react": "10.4.5",
     "@testing-library/user-event": "12.0.11",
     "apollo-codegen": "^0.20.2",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "latest",
     "formik": "2.1.4",
     "graphql": "^15.3.0",
     "http-proxy-middleware": "1.0.5",
+    "jest-enzyme": "^7.1.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "4.0.3",
+    "react-test-renderer": "16.13.1",
+    "waait": "1.0.5"
+  },
+  "resolutions": {
+    "react-test-renderer": "17.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
