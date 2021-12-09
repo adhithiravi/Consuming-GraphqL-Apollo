@@ -37,7 +37,8 @@
           "name": "GraphQL - The Big Picture"
         }
       ],
-      "name": "West Larson"
+      "name": "West Larson",
+      "featured": true
     },
     {
       "id": "1491c981-bbb2-4db3-b89a-3a7434451fed",
@@ -48,7 +49,8 @@
           "name": "Rapid Cross-Platform AR Development with React Native"
         }
       ],
-      "name": "Xoan Chapman"
+      "name": "Xoan Chapman",
+      "featured": true
     },
     {
       "id": "223d2b9d-a582-4e14-bebb-d636fb030bda",
@@ -59,7 +61,8 @@
           "name": "Getting your head around .NET Standard 2.1"
         }
       ],
-      "name": "Reed Watts"
+      "name": "Reed Watts",
+      "featured": true
     },
     {
       "id": "0a8d8acd-7224-4746-8cb6-5eeee2626bf4",

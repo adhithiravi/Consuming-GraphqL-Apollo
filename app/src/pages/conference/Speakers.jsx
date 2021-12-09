@@ -3,58 +3,59 @@ import "./style-sessions.css";
 import { useParams } from "react-router-dom";
 import { gql, useQuery, useMutation } from "@apollo/client";
 
+/* ---> Define queries, mutations and fragments here */
+
 const SPEAKER_ATTRIBUTES = gql`
-  fragment SpeakerInfo on Speaker{
+  fragment SpeakerInfo on Speaker {
+    id
+    name
+    bio
+    sessions {
       id
-			name
-			bio
-			sessions {
-				id
-				title
-			}
-      featured
+      title
     }
+    featured
+  }
 `;
 
 const FEATURED_SPEAKER = gql`
   mutation markFeatured($speakerId: ID!, $featured: Boolean!) {
-    markFeatured(speakerId: $speakerId, featured: $featured) {
+    markFeatured(speakerId: $speakerId, featured: $featured){
       id
       featured
     }
   }
 `;
 
-// define speaker query
 const SPEAKERS = gql`
-	query speakers {
-		speakers {
-			...SpeakerInfo
-		}
-	}
-  ${SPEAKER_ATTRIBUTES}
-`;
-
-const SPEAKER_BY_ID = gql`
-  query speakeryById($id: ID!){
-    speakerById(id: $id) {
+  query speakers {
+    speakers {
       ...SpeakerInfo
     }
   }
-  ${SPEAKER_ATTRIBUTES}
+  ${ SPEAKER_ATTRIBUTES }
 `;
 
+const SPEAKER_BY_ID = gql`
+  query speakerById($id: ID!) {
+    speakerById(id: $id) {
+        ...SpeakerInfo
+      }
+    }
+    ${ SPEAKER_ATTRIBUTES }
+`;
 
 const SpeakerList = () => {
 
+  /* ---> Replace hardcoded speaker values with data that you get back from GraphQL server here */
   const { loading, error, data } = useQuery(SPEAKERS);
-
-  const [ markFeatured ] = useMutation(FEATURED_SPEAKER);
   
-	if (loading) return <p>Loading speakers...</p>
-	if (error) return <p>Error loading speakers!</p>
+  const [ markedFeatured ] = useMutation(FEATURED_SPEAKER);
 
-  return data.speakers.map(({ id, name, bio, sessions, featured }) => (
+  if(loading) return <p>Loading speakers...</p>
+  if(error) return <p>Error loading speakers!</p> 
+
+  return data.speakers.map(({ id, name, bio, sessions, featured }) =>
 		<div
       key={id}
       className="col-xs-12 col-sm-6 col-md-6"
@@ -70,18 +71,20 @@ const SpeakerList = () => {
         <div className="panel-footer">
           <h4>Sessions</h4>
 					{
-						sessions.map((session) => (
-							<span key={session.id}>
-              	<p>{session.title}</p>
-           		</span>
-						))
+						/* ---> Loop through speaker's sessions here */
+            sessions.map((session) => (
+              <span key={session.id} style={{ padding: 2 }}>
+                <p>{session.title}</p>
+              </span>
+            ))
 					}
           <span>	
             <button	
               type="button"	
               className="btn btn-default btn-lg"	
-              onClick={ async() => {
-                await markFeatured({ variables: {
+              onClick={ async () => {
+                /* ---> Call useMutation's mutate function to mark speaker as featured */
+                await markedFeatured({ variables: {
                   speakerId: id, featured: true
                 }})
               }}	
@@ -94,25 +97,26 @@ const SpeakerList = () => {
                   }}	
                 ></i>{" "}	
                 Featured Speaker	
-              </button>	
-            </span>
+            </button>	
+          </span>
         </div>
       </div>
     </div>
-	));
+	);
 };
-
 
 const SpeakerDetails = () => {
 
+    /* ---> Replace hardcoded speaker values with data that you get back from GraphQL server here */
   const { speaker_id } = useParams();
 
-  const { loading, error, data } = useQuery(SPEAKER_BY_ID, {
-    variables: { id: speaker_id },
-  });
- 
-  if (loading) return <p>Loading speaker...</p>
-	if (error) return <p>Error loading speaker!</p>
+  const { loading, error, data } = useQuery(SPEAKER_BY_ID, 
+    {
+      variables: { id: speaker_id }
+    });
+
+  if(loading) return <p>Loading speakers...</p>
+  if(error) return <p>Error loading speakers!</p> 
 
   const speaker = data.speakerById;
   const { id, name, bio, sessions } = speaker;
@@ -150,7 +154,6 @@ export function Speaker() {
   );
 }
 
-
 export function Speakers() {
   return (
     <>
@@ -162,5 +165,3 @@ export function Speakers() {
     </>
   );
 }
-
-	

@@ -3630,6 +3630,13 @@
       "level": "Intermediate",
       "day": "Thursday",
       "id": "814b1f5e-e6df-440b-a91c-df198b5bbed2"
+    },
+    {
+      "title": "My new session",
+      "description": "blah blah",
+      "level": "Intermediate",
+      "day": "Friday",
+      "id": "cd1983da-d80f-4ad5-8700-47a646869bc8"
     }
   ]
 }

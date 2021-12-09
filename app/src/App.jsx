@@ -41,7 +41,6 @@ function AppRouter() {
               <Home />
             </Route>
           </Switch>
-        }
         <Footer />
       </Router>
     </div>
